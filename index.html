@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perangkat Mendaftar Akun</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        body { background: #F7F9FA; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; user-select: none; overflow: hidden; }
+        
+        /* Header */
+        .header { background: #3B66A4; color: white; text-align: center; padding: 15px; font-size: 14px; position: relative; z-index: 10; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .btn-back-top { position: absolute; left: 15px; color: white; text-decoration: none; font-weight: bold; cursor: pointer; }
+        
+        /* Content Form */
+        .content { flex: 1; padding: 20px 16px; z-index: 10; }
+        
+        /* Kotak Input Teks */
+        .input-container { background: white; border: 1px solid #EAEAEA; border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; position: relative; }
+        .field-input { width: 100%; border: none; outline: none; font-size: 16px; color: #333; background: transparent; padding-right: 60px; }
+        .field-input::placeholder { color: #BBB; }
+        
+        /* Counter Karakter Angka */
+        .counter-text { position: absolute; right: 16px; bottom: 14px; font-size: 11px; color: #AAA; }
+        
+        /* Teks Deskripsi Panduan Player */
+        .desc-text { font-size: 13px; color: #666; text-align: center; line-height: 1.5; padding: 0 10px; }
+        
+        /* Footer Buttons */
+        .footer { padding: 16px; z-index: 10; }
+        .btn-container { display: flex; gap: 12px; margin-bottom: 15px; }
+        .btn { flex: 1; border: none; padding: 14px; border-radius: 10px; font-size: 16px; font-weight: 500; cursor: pointer; text-align: center; }
+        .btn-white { background: white; color: #555; border: 1px solid #EAEAEA; }
+        .btn-white:active { background: #F0F2F3; }
+        .btn-blue { background: #1A8CFF; color: white; }
+        .btn-blue:active { background: #0073E6; }
+        .wm { text-align: center; font-size: 10px; color: #AAA; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <span class="btn-back-top" onclick="kembaliLink()">&#10094;</span>
+        Perangkat yang Anda gunakan untuk m...
+    </div>
+
+    <div class="content">
+        <div class="input-container">
+            <input type="text" class="field-input" id="inputPerangkat" placeholder="Silakan masukkan model perangkat" value="" oninput="updateCounter(this)">
+            <span class="counter-text" id="charCounter">0/200</span>
+        </div>
+
+        <div class="desc-text">
+            Perangkat yang Anda gunakan untuk mendaftar akun Anda.<br>Sebagai contoh: iPhone 7 plus, HUAWEI P20 Lite
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="btn-container">
+            <button class="btn btn-white" onclick="kembaliLink()">Kembali</button>
+            <button class="btn btn-blue" onclick="arahkanLink()">Berikutnya</button>
+        </div>
+        <div class="wm">Powered by AIHELP.NET</div>
+    </div>
+
+    <script>
+        // Fungsi Counter Karakter Real-time
+        function updateCounter(input) {
+            const len = input.value.length;
+            document.getElementById('charCounter').innerText = `${len}/200`;
+        }
+
+        // EDIT LINK ALUR DI SINI
+        function kembaliLink() {
+            window.location.href = "https://LINK-KEMBALI-KAMU.com";
+        }
+
+        function arahanLink() {
+            window.location.href = "https://LINK-BERIKUTNYA-KAMU.com";
+        }
+    </script>
+
+</body>
+</html>
